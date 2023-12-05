@@ -1,145 +1,127 @@
 <html>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <head>
 <style>
-/*Typography*/
-html {font: 16px 'Lobster', serif;}
-h1 {font-size: 2em;}
-h2 {font-size: 1.75em;}
-h3 {font-size: 1.5em;}
-p {font-size: 1.25em;}
-/*BASE*/
-html,
+
 body {
-  width: 100%;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background: #484848;
+  font-size: 1rem;
+  line-height: 1.618em;
+}
+
+html, body, main {
   height: 100%;
 }
-/*Layout*/
-* {box-sizing: border-box;}
-/*Navigation*/
+
+aside {
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  background: #333;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+main {
+  z-index: 2;
+  background: #484848;
+  position: fixed;
+  transition: transform 0.5s;
+  overflow-y: auto;
+  width: 100%;
+}
+article {
+  padding: 1em;
+  color:white;
+}
+
+header {
+  background: #39f;
+  padding: 0.5em 1em;
+}
 nav {
-  position: relative;
-  left: -12em;
-  width: 10em;
-  height: 100%;
-  background: #DC143C;
-  font-family: 'Roboto Condensed', sans-serif;
-  transition: left .3s linear;
+  display: flex;
+  b {
+    flex-grow: 1;
+    text-align: right;
+  }
 }
-.nav ul {
-  float: left;
-  width: 100%;
+img {
+  height: 1em;
+  vertical-align: middle;
 }
-.nav a,
-.fa-bars,
-.soc-media a {
-  display: block;
-  color: #fff;
+path {
+  stroke: white;
+  stroke-width: 3;
+}
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+p {
+  margin-top: 1em;
+}
+a {
+  color: #00BB00;
   font-weight: bold;
   text-decoration: none;
-  transition: background .35s;
-  &:hover {background: #eb1f48;}
-  &:active {background: #ed365b;}
 }
-.nav a {
-  padding: 1em .5em;
-  width: 100%
+a:hover {
+  color: #00FF00;
 }
-.fa-bars {
-  position: absolute;
-  left: 0em;
-  padding: .25em 0;
-  z-index: 99;
-  width: 5em;
-  background: #DC143C;
-  text-align: center;
-  transition: left .75s ease-in-out;
-  &:hover {cursor: pointer;}
+ul {
+  padding: 1em;
 }
-[type="checkbox"] {
-  width: 3em;
-  height: 3em;
-  display:block;
-  background: #DC143C;
-  &:checked ~ nav {left: -2em;}
+/* Since all labels for the for attribute are
+ * clickable, make them look like they are. */
+label[for] {
+  color: white;
+  cursor: pointer;
 }
-/*Social media*/
-.soc-media {
-  position: absolute;
-  bottom: 5px;
+/* Make sure the hidden checkbox is really hidden
+ * from all consumers of this content. */
+input[hidden] {
+  display: none;
+  &:checked ~ main {
+    transform: translateX(200px);
+  }
 }
-.soc-media li {float: left;}
-.soc-media a {
-  padding: .5em 0;
-  width: 2em;
-  font-weight: normal;
-  text-align: center;
-}
-/*Page Wrapper*/
-.wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
-.wrapper > h1 {
-  position: absolute;
-  top: 45%;
-  width: 100%;
-  color: #DC143C;
-  font-size: 3em;
-  text-align: center;
-}
-.overlay {
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,1);
-}
-/*Pages*/
-section {
-  position: absolute;
-  top: 0;
-  width: 0;
-  height: 100%;
-  overflow: hidden;/*hide all on 0% width*/
-  transition: all .75s;
-}
-:target {
-  width: 100%;
-}
-section .content {
-  margin: 1em auto;
-  max-width: 900px;
-  width: 60%;
-  color: #DC143C;
-}
-section h1,
-section h2,
-section h3 {
-  margin-bottom: .5em;
-  text-align: center;
-}
-section p {
-  margin: .5em 0;
-  font-family: 'lobster';
-}
+
 </style>  
 </head>
 
 
-<input type="checkbox" id="checkbox" /><label for="checkbox"></label>
-<nav role='navigation'>
-  <ul class="nav">
+<input hidden aria-hidden="true" type="checkbox" name="toggle-nav" id="toggle-id"/>
+<aside>
+  <header role="banner">
+    <nav>
+      <label for="toggle-id">
+        <img alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwLDAsMjU2LDI1NiIgd2lkdGg9IjIwcHgiIGhlaWdodD0iMjBweCI+PGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PGcgdHJhbnNmb3JtPSJzY2FsZSg1LjEyLDUuMTIpIj48cGF0aCBkPSJNOS4xNTYyNSw2LjMxMjVsLTIuODQzNzUsMi44NDM3NWwxNS44NDM3NSwxNS44NDM3NWwtMTUuOTM3NSwxNS45Njg3NWwyLjgxMjUsMi44MTI1bDE1Ljk2ODc1LC0xNS45Mzc1bDE1LjkzNzUsMTUuOTM3NWwyLjg0Mzc1LC0yLjg0Mzc1bC0xNS45Mzc1LC0xNS45Mzc1bDE1Ljg0Mzc1LC0xNS44NDM3NWwtMi44NDM3NSwtMi44NDM3NWwtMTUuODQzNzUsMTUuODQzNzV6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" />
+        Close Menu
+      </label>
+    </nav>
+  </header>
+  <ul>
     <li><a href="https://drusaman.github.io">Page principale</a></li>
     <li><a href="https://drusaman.github.io/CoranMot">Traduction mot-par-mot</a></li>
+    <li><a href="#">Contact</a></li>
   </ul>
-</nav>
-<main class="wrapper">
-  <div class="overlay"></div>
-  <h1>Bienvenue au site du Dr. Usama Nonnenmacher.</h1>
+</aside>
+<main>
+  <header role="banner">
+    <nav>
+      <label for="toggle-id">
+        <img alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwLDAsMjU2LDI1NiIgd2lkdGg9IjIwcHgiIGhlaWdodD0iMjBweCI+PGcgZmlsbD0iI2ZmZmZmZiIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PGcgdHJhbnNmb3JtPSJzY2FsZSg1LjEyLDUuMTIpIj48cGF0aCBkPSJNMyw4Yy0wLjcyMTI3LC0wLjAxMDIgLTEuMzkyMTYsMC4zNjg3NSAtMS43NTU3OCwwLjk5MTc1Yy0wLjM2MzYxLDAuNjIzIC0wLjM2MzYxLDEuMzkzNTEgMCwyLjAxNjUxYzAuMzYzNjEsMC42MjMgMS4wMzQ1LDEuMDAxOTUgMS43NTU3OCwwLjk5MTc1aDQ0YzAuNzIxMjcsMC4wMTAyIDEuMzkyMTYsLTAuMzY4NzUgMS43NTU3OCwtMC45OTE3NWMwLjM2MzYxLC0wLjYyMyAwLjM2MzYxLC0xLjM5MzUxIDAsLTIuMDE2NTFjLTAuMzYzNjEsLTAuNjIzIC0xLjAzNDUsLTEuMDAxOTUgLTEuNzU1NzgsLTAuOTkxNzV6TTMsMjNjLTAuNzIxMjcsLTAuMDEwMiAtMS4zOTIxNiwwLjM2ODc1IC0xLjc1NTc4LDAuOTkxNzVjLTAuMzYzNjEsMC42MjMgLTAuMzYzNjEsMS4zOTM1MSAwLDIuMDE2NTFjMC4zNjM2MSwwLjYyMyAxLjAzNDUsMS4wMDE5NSAxLjc1NTc4LDAuOTkxNzVoNDRjMC43MjEyNywwLjAxMDIgMS4zOTIxNiwtMC4zNjg3NSAxLjc1NTc4LC0wLjk5MTc1YzAuMzYzNjEsLTAuNjIzIDAuMzYzNjEsLTEuMzkzNTEgMCwtMi4wMTY1MWMtMC4zNjM2MSwtMC42MjMgLTEuMDM0NSwtMS4wMDE5NSAtMS43NTU3OCwtMC45OTE3NXpNMywzOGMtMC43MjEyNywtMC4wMTAyIC0xLjM5MjE2LDAuMzY4NzUgLTEuNzU1NzgsMC45OTE3NWMtMC4zNjM2MSwwLjYyMyAtMC4zNjM2MSwxLjM5MzUxIDAsMi4wMTY1MWMwLjM2MzYxLDAuNjIzIDEuMDM0NSwxLjAwMTk1IDEuNzU1NzgsMC45OTE3NWg0NGMwLjcyMTI3LDAuMDEwMiAxLjM5MjE2LC0wLjM2ODc1IDEuNzU1NzgsLTAuOTkxNzVjMC4zNjM2MSwtMC42MjMgMC4zNjM2MSwtMS4zOTM1MSAwLC0yLjAxNjUxYy0wLjM2MzYxLC0wLjYyMyAtMS4wMzQ1LC0xLjAwMTk1IC0xLjc1NTc4LC0wLjk5MTc1eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+" />
+		  Menu
+      </label>
+    </nav>
+  </header>
+  <article>
+    <h1>Dr. Usama Nonnenmacher</h1>
+    <p>Bienvenue sur ma page web. Ce site vous permettra de trouver plusieurs livres que j'ai publié In Shâ* Allâh.</p>
+    <p>Si vous cherchez la traduction mot-par-mot du Saint Coran, veuillez <a href="https://drusaman.github.io/CoranMot">appuyer ici</a>.</p>
+  </article>
 </main>
 
 </html>
