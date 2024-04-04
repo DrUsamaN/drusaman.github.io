@@ -53,7 +53,7 @@
 		// Panel.
 			$(
 				'<div id="navPanel">' +
-					'<nav>' +
+					'<nav><h1 id="logo">Dr. Usama Nonnenmacher</h1>' +
 						$('#nav').navList() +
 					'</nav>' +
 				'</div>'

@@ -1,5 +1,34 @@
 @import url("fontawesome-all.min.css");
-@import url("https://api.fonts.coollabs.io/css?family=Lato:300,400,900");
+
+/* lato-300 - latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../webfonts/lato-v24-latin-ext-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../webfonts/lato-v24-latin-ext-300.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* lato-700 - latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../webfonts/lato-v24-latin-ext-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../webfonts/lato-v24-latin-ext-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+/* lato-900 - latin-ext */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../webfonts/lato-v24-latin-ext-900.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('../webfonts/lato-v24-latin-ext-900.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
 
 /*
 	Twenty by HTML5 UP
@@ -121,7 +150,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		font-weight: 400;
+		font-weight: 900;
 	}
 
 	p, ul, ol, dl, table, blockquote {
@@ -1897,7 +1926,7 @@ input, select, textarea {
 			line-height: 1;
 			text-transform: none !important;
 			font-family: 'Font Awesome 5 Free';
-			font-weight: 400;
+			font-weight: 900;
 		}
 
 		.icon.solid:before {
@@ -2112,7 +2141,7 @@ input, select, textarea {
 			}
 
 			table.default th {
-				font-weight: 400;
+				font-weight: 900;
 				padding: 0.5em 1em 0.5em 1em;
 				text-align: left;
 			}
@@ -2444,7 +2473,7 @@ input, select, textarea {
 
 		.dropotron.level-0 {
 			font-size: 0.7em;
-			font-weight: 400;
+			font-weight: 900;
 			margin-top: 1.5em;
 		}
 
@@ -2583,7 +2612,7 @@ input, select, textarea {
 
 				#banner .inner p a {
 					color: inherit;
-					font-weight: 400;
+					font-weight: 900;
 					text-decoration: none;
 				}
 
