@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta name="permalink" content="/coloringtranslations">
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dr. Usama Nonnenmacher</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="index is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					<h1 id="logo">Dr. Usama Nonnenmacher</h1>
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="https://www.drusama.com/">Home</a></li>
+							<li class="submenu">
+								<a href="https://www.drusama.com/#projectsideas">Projects</a>
+								<ul>
+									<li><a href="https://www.drusama.com/frenchTranslation">Qurʼān translation</a></li>
+									<li><a href="https://www.drusama.com/coloringtranslations">Qurʼān word color system</a></li>
+									<li><a href="https://www.drusama.com/colorblindness">Coloring for colorblindness</a></li>
+								</ul>
+							</li>
+							<li><a href="https://www.drusama.com/contact" class="button primary">Contact</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<p>Let’s discuss coloring word-by-word translations. It’s an interesting topic because it can help us improve how much people understand The Qurʿān.</p>
+						<h2>So let’s first start with the main question: why use colors?</h2>
+						<p>Many translations are known as “word-by-word translations” while not actually trying to translate each word separately. To understand better what I 
+						mean, you first have to understand that in many languages a space indicates that a new word is starting. In Arabic though, you can have many words that are attached 
+						together without spaces in between. Let’s look at an example:</p>
+						<img src="images/ArabicWordsExample_colorcoded.jpg" alt="" />
+						<img src="images/EnglishWordsExample_colorcoded.jpg" alt="" />
+						<p>Here the colors show you that we have 5 different words and show you which one is translated by what:</p>
+						<ul style="list-style-position: inside;">
+							<li><strong>فَ</strong> is translated by “And then”</li>
+							<li><strong>سَ</strong> is translated by “very soon”</li>
+							<li><strong>يَكْفِي</strong> is translated by “suffice”</li>
+							<li><strong>كَ</strong> is translated by “you”</li>
+							<li><strong>هُم</strong> is translated by “(against) you” and the “against” is in parentheses because هُم normally just means “they” or “them” but the “against” is added because it is clearly 
+							understood by everyone who knows classical Arabic that the “against” is present in the meaning.</li>
+						</ul>
+						<p>Most “word-by-word translations” wouldn’t show that at all, they’d just show this:</p>
+						<img src="images/ArabicWordsExample_blackwhite.jpg" alt="" />
+						<img src="images/EnglishWordsExample_blackwhite.jpg" alt="" />
+						<p>This is why I suggest improving word-by-word translations with colors. There has been some effort for that before but I haven’t seen a translation that truly applies this fully. I am adding colors 
+						to my translation these days and have made many algorithms to help me automate that task as much as possible. If you’re interested in helping this project for other translations like the English 
+						word-by-word translation then please do contact me.</p>
+						<h2>Now onto the next question: how do we display such colors?</h2>
+						<p>As for the translation, it’s easy: we can just add “spans” in html to indicate the color, like this: 
+						&ldquo;(I read) &lt;span style=&quot;color: rgb(85, 187, 170)&quot;&gt;with&lt;/span&gt; (The) Name&rdquo;</p>
+						<p>Of course we should be using classes instead of just writing things like “style="color: rgb(85, 187, 170)"”. If we make classes we only need to declare the colors once and can be sure they 
+						stay consistent.</p>
+						<p>As for Arabic text, this solution would work in firefox but chrome can’t display it too well. I therefore recommend that we do the same as what is done for displaying tajweed in colors: use color 
+						fonts. I have modified the tajweed color font for Sūratū-l-Fātiḥah to instead use the concepts I just mentioned. You can see the results in the following link: 
+						<a href="https://www.drusama.com/wordexample">click here for English</a> and <a href="https://www.drusama.com/wordexamplefr">here for French</a></p>
+						<p>As you can see it’s working great and it’s an easy solution. Now modifying all the font files would take a few days so if you’d like to help then please contact me, the only things you need to 
+						know is how to deal with SVGs because color fonts are made basically the same way, you don’t need an advanced level though but just the basics of how they work.</p>
+
+					</header>
+
+				</article>
+				
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<br />
+						<li><a href="https://github.com/drusaman" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
+						<br />
+						<br />
+						<p>This webpage is based on a template by HTML5 UP.</p>
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
